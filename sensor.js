@@ -17,8 +17,8 @@ Promise.all([
 ]).then((results) => {
   if (results.every((result) => result.state === "granted")) {
     sensor.start();
-    // …
+    displayElem.innerHTML = `Sensor data: ${results}`;
   } else {
-    console.log("No permissions to use AbsoluteOrientationSensor.");
+    displayElem.innerHTML = "No permissions to use AbsoluteOrientationSensor.";
   }
 });
